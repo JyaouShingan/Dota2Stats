@@ -7,12 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380DF5071B0DC516005480C1 /* RecentHeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380DF5061B0DC516005480C1 /* RecentHeroCell.xib */; };
+		380DF5091B0DC844005480C1 /* RecentHeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380DF5081B0DC844005480C1 /* RecentHeroCell.swift */; };
+		3822063E1B138074008481A0 /* MatchHistoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3822063D1B138074008481A0 /* MatchHistoryView.xib */; };
+		382206401B1380A6008481A0 /* MatchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3822063F1B1380A6008481A0 /* MatchHistoryView.swift */; };
+		382206431B138460008481A0 /* MatchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382206411B138460008481A0 /* MatchHistoryCell.swift */; };
+		382206441B138460008481A0 /* MatchHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382206421B138460008481A0 /* MatchHistoryCell.xib */; };
+		382206461B13AFE9008481A0 /* StaticFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382206451B13AFE9008481A0 /* StaticFunc.swift */; };
+		383A34221B13D8BF0071FE7B /* MatchDetailHeroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383A34211B13D8BF0071FE7B /* MatchDetailHeroView.xib */; };
+		383A34241B13F7D20071FE7B /* MatchDetailHeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383A34231B13F7D20071FE7B /* MatchDetailHeroView.swift */; };
+		383B31311B09AC6900F06768 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B31301B09AC6900F06768 /* PlayerViewController.swift */; };
 		383DE8E31B08070A0061C99C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383DE8E21B08070A0061C99C /* AppDelegate.swift */; };
-		383DE8E51B08070A0061C99C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383DE8E41B08070A0061C99C /* ViewController.swift */; };
 		383DE8E81B08070A0061C99C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 383DE8E61B08070A0061C99C /* Main.storyboard */; };
 		383DE8EA1B08070A0061C99C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 383DE8E91B08070A0061C99C /* Images.xcassets */; };
 		383DE8ED1B08070A0061C99C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383DE8EB1B08070A0061C99C /* LaunchScreen.xib */; };
 		383DE8F91B08070A0061C99C /* Dota2StatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383DE8F81B08070A0061C99C /* Dota2StatsTests.swift */; };
+		38491E4E1B0D3CCB001D7A93 /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38491E4C1B0D3CCB001D7A93 /* HeroDetailView.swift */; };
+		38491E4F1B0D3CCB001D7A93 /* HeroDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38491E4D1B0D3CCB001D7A93 /* HeroDetailView.xib */; };
+		38491E511B0D4FAB001D7A93 /* MatchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38491E501B0D4FAB001D7A93 /* MatchHistory.swift */; };
+		388516041B13BB4A009D118A /* MatchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388516031B13BB4A009D118A /* MatchListController.swift */; };
+		388516061B13CD88009D118A /* MatchDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388516051B13CD88009D118A /* MatchDetailController.swift */; };
+		388A2D8D1B0845A30088C4CF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388A2D8C1B0845A30088C4CF /* MainViewController.swift */; };
+		389D375E1B08728100A22935 /* DotaApiSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D375D1B08728100A22935 /* DotaApiSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +42,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		380DF5061B0DC516005480C1 /* RecentHeroCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentHeroCell.xib; sourceTree = "<group>"; };
+		380DF5081B0DC844005480C1 /* RecentHeroCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentHeroCell.swift; sourceTree = "<group>"; };
+		3822063D1B138074008481A0 /* MatchHistoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchHistoryView.xib; sourceTree = "<group>"; };
+		3822063F1B1380A6008481A0 /* MatchHistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchHistoryView.swift; sourceTree = "<group>"; };
+		382206411B138460008481A0 /* MatchHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchHistoryCell.swift; sourceTree = "<group>"; };
+		382206421B138460008481A0 /* MatchHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchHistoryCell.xib; sourceTree = "<group>"; };
+		382206451B13AFE9008481A0 /* StaticFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticFunc.swift; sourceTree = "<group>"; };
+		383A34211B13D8BF0071FE7B /* MatchDetailHeroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchDetailHeroView.xib; sourceTree = "<group>"; };
+		383A34231B13F7D20071FE7B /* MatchDetailHeroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailHeroView.swift; sourceTree = "<group>"; };
+		383B31301B09AC6900F06768 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		383DE8DD1B08070A0061C99C /* Dota2Stats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dota2Stats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		383DE8E11B08070A0061C99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		383DE8E21B08070A0061C99C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		383DE8E41B08070A0061C99C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		383DE8E71B08070A0061C99C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		383DE8E91B08070A0061C99C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		383DE8EC1B08070A0061C99C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		383DE8F21B08070A0061C99C /* Dota2StatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Dota2StatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		383DE8F71B08070A0061C99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		383DE8F81B08070A0061C99C /* Dota2StatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dota2StatsTests.swift; sourceTree = "<group>"; };
+		38491E4C1B0D3CCB001D7A93 /* HeroDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
+		38491E4D1B0D3CCB001D7A93 /* HeroDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroDetailView.xib; sourceTree = "<group>"; };
+		38491E501B0D4FAB001D7A93 /* MatchHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchHistory.swift; sourceTree = "<group>"; };
+		388516031B13BB4A009D118A /* MatchListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchListController.swift; sourceTree = "<group>"; };
+		388516051B13CD88009D118A /* MatchDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailController.swift; sourceTree = "<group>"; };
+		388A2D8C1B0845A30088C4CF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		389D375D1B08728100A22935 /* DotaApiSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotaApiSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +109,17 @@
 		383DE8DF1B08070A0061C99C /* Dota2Stats */ = {
 			isa = PBXGroup;
 			children = (
-				383DE8E21B08070A0061C99C /* AppDelegate.swift */,
-				383DE8E41B08070A0061C99C /* ViewController.swift */,
+				38491E501B0D4FAB001D7A93 /* MatchHistory.swift */,
+				389D375D1B08728100A22935 /* DotaApiSession.swift */,
+				388516051B13CD88009D118A /* MatchDetailController.swift */,
+				388516031B13BB4A009D118A /* MatchListController.swift */,
+				383B31301B09AC6900F06768 /* PlayerViewController.swift */,
+				388A2D8C1B0845A30088C4CF /* MainViewController.swift */,
 				383DE8E61B08070A0061C99C /* Main.storyboard */,
 				383DE8E91B08070A0061C99C /* Images.xcassets */,
-				383DE8EB1B08070A0061C99C /* LaunchScreen.xib */,
+				38491E491B0D3027001D7A93 /* Custom Views */,
 				383DE8E01B08070A0061C99C /* Supporting Files */,
+				382206451B13AFE9008481A0 /* StaticFunc.swift */,
 			);
 			path = Dota2Stats;
 			sourceTree = "<group>";
@@ -90,6 +127,8 @@
 		383DE8E01B08070A0061C99C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				383DE8E21B08070A0061C99C /* AppDelegate.swift */,
+				383DE8EB1B08070A0061C99C /* LaunchScreen.xib */,
 				383DE8E11B08070A0061C99C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +149,23 @@
 				383DE8F71B08070A0061C99C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		38491E491B0D3027001D7A93 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				38491E4C1B0D3CCB001D7A93 /* HeroDetailView.swift */,
+				38491E4D1B0D3CCB001D7A93 /* HeroDetailView.xib */,
+				380DF5081B0DC844005480C1 /* RecentHeroCell.swift */,
+				380DF5061B0DC516005480C1 /* RecentHeroCell.xib */,
+				3822063F1B1380A6008481A0 /* MatchHistoryView.swift */,
+				3822063D1B138074008481A0 /* MatchHistoryView.xib */,
+				382206411B138460008481A0 /* MatchHistoryCell.swift */,
+				382206421B138460008481A0 /* MatchHistoryCell.xib */,
+				383A34231B13F7D20071FE7B /* MatchDetailHeroView.swift */,
+				383A34211B13D8BF0071FE7B /* MatchDetailHeroView.xib */,
+			);
+			name = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,9 +248,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				382206441B138460008481A0 /* MatchHistoryCell.xib in Resources */,
+				383A34221B13D8BF0071FE7B /* MatchDetailHeroView.xib in Resources */,
 				383DE8E81B08070A0061C99C /* Main.storyboard in Resources */,
+				380DF5071B0DC516005480C1 /* RecentHeroCell.xib in Resources */,
 				383DE8ED1B08070A0061C99C /* LaunchScreen.xib in Resources */,
 				383DE8EA1B08070A0061C99C /* Images.xcassets in Resources */,
+				38491E4F1B0D3CCB001D7A93 /* HeroDetailView.xib in Resources */,
+				3822063E1B138074008481A0 /* MatchHistoryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +273,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				383DE8E51B08070A0061C99C /* ViewController.swift in Sources */,
+				383A34241B13F7D20071FE7B /* MatchDetailHeroView.swift in Sources */,
+				382206431B138460008481A0 /* MatchHistoryCell.swift in Sources */,
+				38491E4E1B0D3CCB001D7A93 /* HeroDetailView.swift in Sources */,
+				388516061B13CD88009D118A /* MatchDetailController.swift in Sources */,
+				380DF5091B0DC844005480C1 /* RecentHeroCell.swift in Sources */,
 				383DE8E31B08070A0061C99C /* AppDelegate.swift in Sources */,
+				382206401B1380A6008481A0 /* MatchHistoryView.swift in Sources */,
+				382206461B13AFE9008481A0 /* StaticFunc.swift in Sources */,
+				38491E511B0D4FAB001D7A93 /* MatchHistory.swift in Sources */,
+				383B31311B09AC6900F06768 /* PlayerViewController.swift in Sources */,
+				389D375E1B08728100A22935 /* DotaApiSession.swift in Sources */,
+				388A2D8D1B0845A30088C4CF /* MainViewController.swift in Sources */,
+				388516041B13BB4A009D118A /* MatchListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,9 +410,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Dota2Stats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -348,9 +422,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Dota2Stats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -407,6 +483,7 @@
 				383DE8FE1B08070A0061C99C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		383DE8FF1B08070A0061C99C /* Build configuration list for PBXNativeTarget "Dota2StatsTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +492,7 @@
 				383DE9011B08070A0061C99C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

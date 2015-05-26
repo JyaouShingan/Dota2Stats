@@ -16,6 +16,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let apiSession = DotaApiSession()
+        if defaults.objectForKey("HeroList") == nil {
+            var heroes: [NSObject:AnyObject] = [:]
+            apiSession.getHeroList(){ (result) -> () in
+                println(result)
+                for eachHero in result {
+                    if let hero = eachHero as? NSDictionary {
+                        let numId = hero["id"] as Int
+                        let id = "\(numId)"
+                        let name = hero["name"] as String
+                        let localName = hero["localized_name"] as String
+                        
+                        heroes[id] = ["id":id, "name":name, "localName":localName]
+                    }
+                }
+                println(heroes)
+                defaults.setObject(heroes, forKey: "HeroList")
+            }
+        }
+    
+        
+        println(NSTemporaryDirectory())
+        println(NSDate().timeIntervalSince1970)
         return true
     }
 
