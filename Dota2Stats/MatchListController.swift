@@ -16,7 +16,7 @@ class MatchListController: UITableViewController{
     
     weak var matchesHistory: MatchHistory? {
         didSet {
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            dispatch_async(dispatch_get_main_queue(), {[unowned self] () -> Void in
                 if self.tableView != nil {
                     self.tableView.reloadData()
                 }

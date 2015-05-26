@@ -41,7 +41,7 @@ import UIKit
             maxHeroGames = recentHeroes[0].count
             //println(recentHeroes)
             if heroesTableView != nil {
-                dispatch_async(dispatch_get_main_queue(),{ () -> Void in
+                dispatch_async(dispatch_get_main_queue(),{[unowned self] () -> Void in
                     self.heroesTableView!.reloadData()
                 })
             }
