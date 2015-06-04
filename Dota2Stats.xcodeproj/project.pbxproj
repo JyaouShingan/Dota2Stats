@@ -22,6 +22,7 @@
 		383DE8EA1B08070A0061C99C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 383DE8E91B08070A0061C99C /* Images.xcassets */; };
 		383DE8ED1B08070A0061C99C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383DE8EB1B08070A0061C99C /* LaunchScreen.xib */; };
 		383DE8F91B08070A0061C99C /* Dota2StatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383DE8F81B08070A0061C99C /* Dota2StatsTests.swift */; };
+		384400F61B1FDE71004244F2 /* Haneke.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 384400EB1B1FDB72004244F2 /* Haneke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		38491E4E1B0D3CCB001D7A93 /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38491E4C1B0D3CCB001D7A93 /* HeroDetailView.swift */; };
 		38491E4F1B0D3CCB001D7A93 /* HeroDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38491E4D1B0D3CCB001D7A93 /* HeroDetailView.xib */; };
 		38491E511B0D4FAB001D7A93 /* MatchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38491E501B0D4FAB001D7A93 /* MatchHistory.swift */; };
@@ -39,7 +40,48 @@
 			remoteGlobalIDString = 383DE8DC1B08070A0061C99C;
 			remoteInfo = Dota2Stats;
 		};
+		384400EA1B1FDB72004244F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 384400E41B1FDB72004244F2 /* Haneke.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A095C9561980418C00CD0F4C;
+			remoteInfo = Haneke;
+		};
+		384400EC1B1FDB72004244F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 384400E41B1FDB72004244F2 /* Haneke.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A095C9611980418C00CD0F4C;
+			remoteInfo = HanekeTests;
+		};
+		384400EE1B1FDB72004244F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 384400E41B1FDB72004244F2 /* Haneke.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0026E9A19C9BFBC004DE0C6;
+			remoteInfo = HanekeDemo;
+		};
+		384400F01B1FDB9E004244F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 384400E41B1FDB72004244F2 /* Haneke.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A095C9551980418C00CD0F4C;
+			remoteInfo = Haneke;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		384400F51B1FDE61004244F2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				384400F61B1FDE71004244F2 /* Haneke.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		380DF5061B0DC516005480C1 /* RecentHeroCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentHeroCell.xib; sourceTree = "<group>"; };
@@ -61,6 +103,7 @@
 		383DE8F21B08070A0061C99C /* Dota2StatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Dota2StatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		383DE8F71B08070A0061C99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		383DE8F81B08070A0061C99C /* Dota2StatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dota2StatsTests.swift; sourceTree = "<group>"; };
+		384400E41B1FDB72004244F2 /* Haneke.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Haneke.xcodeproj; path = "HanekeSwift-master/Haneke.xcodeproj"; sourceTree = "<group>"; };
 		38491E4C1B0D3CCB001D7A93 /* HeroDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
 		38491E4D1B0D3CCB001D7A93 /* HeroDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroDetailView.xib; sourceTree = "<group>"; };
 		38491E501B0D4FAB001D7A93 /* MatchHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchHistory.swift; sourceTree = "<group>"; };
@@ -68,6 +111,9 @@
 		388516051B13CD88009D118A /* MatchDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailController.swift; sourceTree = "<group>"; };
 		388A2D8C1B0845A30088C4CF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		389D375D1B08728100A22935 /* DotaApiSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotaApiSession.swift; sourceTree = "<group>"; };
+		6573DED7E580ACC6E65B2EC0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A073FE4B250CE600DC5CE462 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F65DECA188859EACDD7F9313 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +140,8 @@
 				383DE8DF1B08070A0061C99C /* Dota2Stats */,
 				383DE8F51B08070A0061C99C /* Dota2StatsTests */,
 				383DE8DE1B08070A0061C99C /* Products */,
+				880941F2E9119F800F8867AE /* Pods */,
+				BC586323EF1514C663C2C6C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +199,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		384400E51B1FDB72004244F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				384400EB1B1FDB72004244F2 /* Haneke.framework */,
+				384400ED1B1FDB72004244F2 /* HanekeTests.xctest */,
+				384400EF1B1FDB72004244F2 /* HanekeDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		38491E491B0D3027001D7A93 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +226,24 @@
 			name = "Custom Views";
 			sourceTree = "<group>";
 		};
+		880941F2E9119F800F8867AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F65DECA188859EACDD7F9313 /* Pods.debug.xcconfig */,
+				6573DED7E580ACC6E65B2EC0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC586323EF1514C663C2C6C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				384400E41B1FDB72004244F2 /* Haneke.xcodeproj */,
+				A073FE4B250CE600DC5CE462 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,13 +251,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 383DE8FC1B08070A0061C99C /* Build configuration list for PBXNativeTarget "Dota2Stats" */;
 			buildPhases = (
+				9274EB1D39E61F3E51BFA97D /* Check Pods Manifest.lock */,
 				383DE8D91B08070A0061C99C /* Sources */,
 				383DE8DA1B08070A0061C99C /* Frameworks */,
 				383DE8DB1B08070A0061C99C /* Resources */,
+				384400F51B1FDE61004244F2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				384400F11B1FDB9E004244F2 /* PBXTargetDependency */,
 			);
 			name = Dota2Stats;
 			productName = Dota2Stats;
@@ -235,6 +314,12 @@
 			mainGroup = 383DE8D41B08070A0061C99C;
 			productRefGroup = 383DE8DE1B08070A0061C99C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 384400E51B1FDB72004244F2 /* Products */;
+					ProjectRef = 384400E41B1FDB72004244F2 /* Haneke.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				383DE8DC1B08070A0061C99C /* Dota2Stats */,
@@ -242,6 +327,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		384400EB1B1FDB72004244F2 /* Haneke.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Haneke.framework;
+			remoteRef = 384400EA1B1FDB72004244F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		384400ED1B1FDB72004244F2 /* HanekeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = HanekeTests.xctest;
+			remoteRef = 384400EC1B1FDB72004244F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		384400EF1B1FDB72004244F2 /* HanekeDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = HanekeDemo.app;
+			remoteRef = 384400EE1B1FDB72004244F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		383DE8DB1B08070A0061C99C /* Resources */ = {
@@ -267,6 +376,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9274EB1D39E61F3E51BFA97D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		383DE8D91B08070A0061C99C /* Sources */ = {
@@ -304,6 +431,11 @@
 			isa = PBXTargetDependency;
 			target = 383DE8DC1B08070A0061C99C /* Dota2Stats */;
 			targetProxy = 383DE8F31B08070A0061C99C /* PBXContainerItemProxy */;
+		};
+		384400F11B1FDB9E004244F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Haneke;
+			targetProxy = 384400F01B1FDB9E004244F2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -408,6 +540,7 @@
 		};
 		383DE8FD1B08070A0061C99C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F65DECA188859EACDD7F9313 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -420,6 +553,7 @@
 		};
 		383DE8FE1B08070A0061C99C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6573DED7E580ACC6E65B2EC0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

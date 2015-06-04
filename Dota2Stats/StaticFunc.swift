@@ -107,4 +107,12 @@ class StaticFunc {
             return "Unknown"
         }
     }
+    
+    class func itemNameToURL (name:String) -> NSURL {
+        let realName = name.stringByReplacingOccurrencesOfString("item_", withString: "", options: nil, range: nil)
+        let itemImagePath = "http://cdn.dota2.com/apps/dota2/images/items/\(realName)_lg.png"
+        let imageURL = NSURL(string: itemImagePath)
+        
+        return imageURL!
+    }
 }

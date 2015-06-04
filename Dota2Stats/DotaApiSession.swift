@@ -64,12 +64,12 @@ class DotaApiSession {
                                     
                                     var playerInfo = PlayerInfo(account_id: id_64,
                                         account_id_32: id_32,
-                                        player_name: player["personaname"] as String,
-                                        avatar: player["avatarfull"] as String,
-                                        steam_id: player["steamid"] as String,
-                                        community_visiblity_state: player["communityvisibilitystate"] as Int,
-                                        personal_state: player["personastate"] as Int,
-                                        profile_url: player["profileurl"] as String,
+                                        player_name: player["personaname"] as! String,
+                                        avatar: player["avatarfull"] as! String,
+                                        steam_id: player["steamid"] as! String,
+                                        community_visiblity_state: player["communityvisibilitystate"] as! Int,
+                                        personal_state: player["personastate"] as! Int,
+                                        profile_url: player["profileurl"] as! String,
                                         last_logoff: logOffTime,
                                         real_name: nil,
                                         game_id: nil,
@@ -136,8 +136,8 @@ class DotaApiSession {
                     if let players = response["players"] as? NSArray {
                         if players.count > 0 {
                             if let player = players[0] as? NSDictionary {
-                                let playerName = player["personaname"] as String
-                                let playerAvatar = player["avatarfull"] as String
+                                let playerName = player["personaname"] as! String
+                                let playerAvatar = player["avatarfull"] as! String
                                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                                     completion(playerName, playerAvatar)
                                 })
@@ -164,14 +164,14 @@ class DotaApiSession {
             
             if let json = parsedObject as? NSDictionary {
                 if let result = json["result"] as? NSDictionary {
-                    if (result["status"] as Int) == 15 {
+                    if (result["status"] as! Int) == 15 {
                         self.matchDelegate?.matchUserNotAllowed()
                         return
                     }
                     var history = MatchHistory(accountID: id,
-                        status: result["status"] as Int,
-                        num: result["num_results"] as Int,
-                        remaining: result["results_remaining"] as Int)
+                        status: result["status"] as! Int,
+                        num: result["num_results"] as! Int,
+                        remaining: result["results_remaining"] as! Int)
                     if let matches = result["matches"] as? NSArray {
                         for index in 0..<history.num_results {
                             if let match = matches[index] as? NSDictionary {
@@ -187,7 +187,7 @@ class DotaApiSession {
                                         if let player = players[pIndex] as? NSDictionary {
                                             let accountId = ((player["account_id"]) as? NSNumber)?.unsignedIntValue
                                             let playerSlot = ((player["player_slot"]) as? NSNumber)?.unsignedCharValue
-                                            let heroId = player["hero_id"] as Int
+                                            let heroId = player["hero_id"] as! Int
                                             
                                             if accountId == id {
                                                 playerTeam = playerSlot < 100
@@ -206,7 +206,7 @@ class DotaApiSession {
                                 let shortMatch = ShortMatchDetail(match_id: matchID!,
                                     match_seq_num: matchSeq!,
                                     start_time: startTime!,
-                                    lobby_type: match["lobby_type"] as Int,
+                                    lobby_type: match["lobby_type"] as! Int,
                                     players: playersArray,
                                     user_team: playerTeam,
                                     player_won: nil,
@@ -245,14 +245,14 @@ class DotaApiSession {
                         playerResult = (matchResult && inRadiant) || (!matchResult && !inRadiant)
                     }
                     
-                    let humanPlayers = result["human_players"] as Int
-                    let players = result["players"] as NSArray
+                    let humanPlayers = result["human_players"] as! Int
+                    let players = result["players"] as! NSArray
                     for index in 0..<humanPlayers {
-                        let currPlayer = players[index] as NSDictionary
-                        if (currPlayer["account_id"] as NSNumber).unsignedIntValue == playerID {
-                            let kills = currPlayer["kills"] as Int
-                            let deaths = currPlayer["deaths"] as Int
-                            let assists = currPlayer["assists"] as Int
+                        let currPlayer = players[index] as! NSDictionary
+                        if (currPlayer["account_id"] as! NSNumber).unsignedIntValue == playerID {
+                            let kills = currPlayer["kills"] as! Int
+                            let deaths = currPlayer["deaths"] as! Int
+                            let assists = currPlayer["assists"] as! Int
                             kda = (kills, deaths, assists)
                         }
                     }
@@ -276,56 +276,56 @@ class DotaApiSession {
             
             if let json = parsedObject as? NSDictionary {
                 if let result = json["result"] as? NSDictionary {
-                    let radiantWin = result["radiant_win"] as Bool
-                    let duration = result["duration"] as Int
-                    let startTime = (result["start_time"] as NSNumber).longLongValue
+                    let radiantWin = result["radiant_win"] as! Bool
+                    let duration = result["duration"] as! Int
+                    let startTime = (result["start_time"] as! NSNumber).longLongValue
                     let match_id = forMatchID
-                    let matchSeqNum = (result["match_seq_num"] as NSNumber).longLongValue
-                    let towerStatusRadiant = (result["tower_status_radiant"] as NSNumber).unsignedShortValue
-                    let towerStatusDire = (result["tower_status_dire"] as NSNumber).unsignedShortValue
-                    let barracksStatusRadiant = (result["barracks_status_radiant"] as NSNumber).unsignedCharValue
-                    let barracksStatusDire = (result["barracks_status_dire"] as NSNumber).unsignedCharValue
-                    let cluster = result["cluster"] as Int
-                    let firstBloodTime = result["first_blood_time"] as Int
-                    let lobbyType = result["lobby_type"] as Int
-                    let humanPlayers = result["human_players"] as Int
-                    let leagueID = result["leagueid"] as Int
-                    let posVote = result["positive_votes"] as Int
-                    let negVote = result["negative_votes"] as Int
-                    let gameMode = result["game_mode"] as Int
+                    let matchSeqNum = (result["match_seq_num"] as! NSNumber).longLongValue
+                    let towerStatusRadiant = (result["tower_status_radiant"] as! NSNumber).unsignedShortValue
+                    let towerStatusDire = (result["tower_status_dire"] as! NSNumber).unsignedShortValue
+                    let barracksStatusRadiant = (result["barracks_status_radiant"] as! NSNumber).unsignedCharValue
+                    let barracksStatusDire = (result["barracks_status_dire"] as! NSNumber).unsignedCharValue
+                    let cluster = result["cluster"] as! Int
+                    let firstBloodTime = result["first_blood_time"] as! Int
+                    let lobbyType = result["lobby_type"] as! Int
+                    let humanPlayers = result["human_players"] as! Int
+                    let leagueID = result["leagueid"] as! Int
+                    let posVote = result["positive_votes"] as! Int
+                    let negVote = result["negative_votes"] as! Int
+                    let gameMode = result["game_mode"] as! Int
                     var playersDetail: [MatchPlayerDetail] = []
                     
                     if let players = result["players"] as? NSArray {
                         for index in 0..<humanPlayers {
-                            let currPlayer = players[index] as NSDictionary
-                            let accountID = (currPlayer["account_id"] as NSNumber).unsignedIntValue
-                            let playerSlot = (currPlayer["player_slot"] as NSNumber).unsignedCharValue
-                            let heroID = currPlayer["hero_id"] as Int
-                            let items = [currPlayer["item_0"] as Int,
-                                         currPlayer["item_1"] as Int,
-                                         currPlayer["item_2"] as Int,
-                                         currPlayer["item_3"] as Int,
-                                         currPlayer["item_4"] as Int,
-                                         currPlayer["item_5"] as Int]
-                            let kills = currPlayer["kills"] as Int
-                            let deaths = currPlayer["deaths"] as Int
-                            let assists = currPlayer["assists"] as Int
-                            let leaverStates = currPlayer["leaver_status"] as Int
-                            let gold = currPlayer["gold"] as Int
-                            let lastHits = currPlayer["last_hits"] as Int
-                            let denies = currPlayer["denies"] as Int
-                            let gpm = currPlayer["gold_per_min"] as Int
-                            let epm = currPlayer["xp_per_min"] as Int
-                            let goldSpent = currPlayer["gold_spent"] as Int
-                            let heroDamage = currPlayer["hero_damage"] as Int
-                            let towerDamage = currPlayer["tower_damage"] as Int
-                            let heroHeal = currPlayer["hero_healing"] as Int
-                            let level = currPlayer["level"] as Int
+                            let currPlayer = players[index] as! NSDictionary
+                            let accountID = (currPlayer["account_id"] as! NSNumber).unsignedIntValue
+                            let playerSlot = (currPlayer["player_slot"] as! NSNumber).unsignedCharValue
+                            let heroID = currPlayer["hero_id"] as! Int
+                            let items = [currPlayer["item_0"] as! Int,
+                                         currPlayer["item_1"] as! Int,
+                                         currPlayer["item_2"] as! Int,
+                                         currPlayer["item_3"] as! Int,
+                                         currPlayer["item_4"] as! Int,
+                                         currPlayer["item_5"] as! Int]
+                            let kills = currPlayer["kills"] as! Int
+                            let deaths = currPlayer["deaths"] as! Int
+                            let assists = currPlayer["assists"] as! Int
+                            let leaverStates = currPlayer["leaver_status"] as! Int
+                            let gold = currPlayer["gold"] as! Int
+                            let lastHits = currPlayer["last_hits"] as! Int
+                            let denies = currPlayer["denies"] as! Int
+                            let gpm = currPlayer["gold_per_min"] as! Int
+                            let epm = currPlayer["xp_per_min"] as! Int
+                            let goldSpent = currPlayer["gold_spent"] as! Int
+                            let heroDamage = currPlayer["hero_damage"] as! Int
+                            let towerDamage = currPlayer["tower_damage"] as! Int
+                            let heroHeal = currPlayer["hero_healing"] as! Int
+                            let level = currPlayer["level"] as! Int
                             var abilityUps: [AbilityUpgrade] = []
                             if let abilityUpgrades = currPlayer["ability_upgrades"] as? NSArray {
                                 for ability in abilityUpgrades {
-                                    let currAbility = ability as NSDictionary
-                                    abilityUps.append(AbilityUpgrade(ability: currAbility["ability"] as Int, time: currAbility["time"] as Int, level: currAbility["level"] as Int))
+                                    let currAbility = ability as! NSDictionary
+                                    abilityUps.append(AbilityUpgrade(ability: currAbility["ability"] as! Int, time: currAbility["time"] as! Int, level: currAbility["level"] as! Int))
                                 }
                             }
                             
@@ -401,6 +401,26 @@ class DotaApiSession {
                 }
             }
         })
+        
+        dataTask.resume()
+    }
+    
+    func getItemList(completionHandler: (result:NSArray)->() ) {
+        let itemListURL = NSURL(string: "http://api.steampowered.com/IEconDOTA2_570/GetGameItems/v001/?key=\(apiKey)&language=EU")
+        
+        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        let dataTask = session.dataTaskWithURL(itemListURL!){ (data, response, error) -> Void in
+            var parseError: NSError?
+            let parsedObject: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parseError)
+            
+            if let json = parsedObject as? NSDictionary {
+                if let result = json["result"] as? NSDictionary {
+                    if let items = result["items"] as? NSArray {
+                        completionHandler(result: items)
+                    }
+                }
+            }
+        }
         
         dataTask.resume()
     }

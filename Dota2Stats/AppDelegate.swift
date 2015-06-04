@@ -25,16 +25,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 println(result)
                 for eachHero in result {
                     if let hero = eachHero as? NSDictionary {
-                        let numId = hero["id"] as Int
+                        let numId = hero["id"] as! Int
                         let id = "\(numId)"
-                        let name = hero["name"] as String
-                        let localName = hero["localized_name"] as String
+                        let name = hero["name"] as! String
+                        let localName = hero["localized_name"] as! String
                         
                         heroes[id] = ["id":id, "name":name, "localName":localName]
                     }
                 }
                 println(heroes)
                 defaults.setObject(heroes, forKey: "HeroList")
+            }
+        }
+        
+        if defaults.objectForKey("ItemList") == nil {
+            var items: [NSObject:AnyObject] = [:]
+            apiSession.getItemList(){ (result) -> () in
+                for eachItem in result {
+                    if let item = eachItem as? NSDictionary {
+                        let numId = item["id"] as! Int
+                        let id = "\(numId)"
+                        let name = item["name"] as! String
+                        let recipe = item["recipe"] as! Bool
+                        let localName = item["localized_name"] as! String
+                        
+                        items[id] = ["id":id, "name":name, "recipe": recipe, "localName": localName]
+                    }
+                }
+                defaults.setObject(items, forKey: "ItemList")
             }
         }
     

@@ -56,8 +56,8 @@ class MatchDetailController: UIViewController {
         super.viewDidAppear(animated)
         
         masterScrollView.contentSize = CGSize(width: UIScreen.mainScreen().bounds.width, height: 1200)
-        radiantScrollView.contentSize = CGSize(width: 589, height: 319)
-        direScrollView.contentSize = CGSize(width: 589, height: 319)
+        radiantScrollView.contentSize = CGSize(width: 610, height: 319)
+        direScrollView.contentSize = CGSize(width: 610, height: 319)
     }
     
     func updateContent() {
@@ -119,30 +119,48 @@ class MatchDetailController: UIViewController {
             view.playerNameLabel.text = "Annoymous"
         } else {
             apiSession.getShortPlayerInfo(player.account_id, completion: { (name, avatar) -> Void in
-                dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.value), 0), { () -> Void in
-                    let image = UIImage(data: NSData(contentsOfURL: NSURL(string: avatar)!)!)
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        view.playerAvatarImage.image = image
-                    })
-                })
+                view.playerAvatarImage.hnk_setImageFromURL(NSURL(string: avatar)!, placeholder: nil, format: nil, failure: nil, success: nil)
                 view.playerNameLabel.text = name
             })
         }
         
         let defaults = NSUserDefaults.standardUserDefaults()
         let heroList = defaults.dictionaryForKey("HeroList")!
-        let heroes = heroList["\(player.hero_id)"] as NSDictionary
-        let heroName = heroes["name"] as String
+        let heroes = heroList["\(player.hero_id)"] as! NSDictionary
+        let heroName = heroes["name"] as! String
         
-        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.value), 0), { () -> Void in
-            let realName = heroName.stringByReplacingOccurrencesOfString("npc_dota_hero_", withString: "", options: nil, range: nil)
-            let heroImagePath = "http://cdn.dota2.com/apps/dota2/images/heroes/\(realName)_lg.png"
-            let imageURL = NSURL(string: heroImagePath)
-            let data = NSData(contentsOfURL: imageURL!)
-            dispatch_async(dispatch_get_main_queue()){
-                view.playerHeroImage.image = UIImage(data: data!)
+        let realName = heroName.stringByReplacingOccurrencesOfString("npc_dota_hero_", withString: "", options: nil, range: nil)
+        let heroImagePath = "http://cdn.dota2.com/apps/dota2/images/heroes/\(realName)_lg.png"
+        let imageURL = NSURL(string: heroImagePath)
+        view.playerHeroImage.hnk_setImageFromURL(imageURL!, placeholder: nil, format: nil, failure: nil, success: nil)
+        
+        let itemList = defaults.dictionaryForKey("ItemList")!
+        var itemsURL:[NSURL?] = [nil,nil,nil,nil,nil,nil]
+        for index in 0..<6 {
+            if player.items[index] != 0 {
+                let itemName = (itemList["\(player.items[index])"] as! NSDictionary)["name"] as! String
+                let itemURL = StaticFunc.itemNameToURL(itemName)
+                itemsURL[index] = itemURL
             }
-        })
+        }
+        if let URL = itemsURL[0] {
+            view.item1Image.hnk_setImageFromURL(URL, placeholder: nil, format: nil, failure: nil, success: nil)
+        }
+        if let URL = itemsURL[1] {
+            view.item2Image.hnk_setImageFromURL(URL, placeholder: nil, format: nil, failure: nil, success: nil)
+        }
+        if let URL = itemsURL[2] {
+            view.item3Image.hnk_setImageFromURL(URL, placeholder: nil, format: nil, failure: nil, success: nil)
+        }
+        if let URL = itemsURL[3] {
+            view.item4Image.hnk_setImageFromURL(URL, placeholder: nil, format: nil, failure: nil, success: nil)
+        }
+        if let URL = itemsURL[4] {
+            view.item5Image.hnk_setImageFromURL(URL, placeholder: nil, format: nil, failure: nil, success: nil)
+        }
+        if let URL = itemsURL[5] {
+            view.item6Image.hnk_setImageFromURL(URL, placeholder: nil, format: nil, failure: nil, success: nil)
+        }
         
         view.heroLevelLabel.text = "\(player.level)"
         let partPercent = String(format: "%.1f%%", 100*(Float(player.kills + player.assists)/Float(totalKill)))

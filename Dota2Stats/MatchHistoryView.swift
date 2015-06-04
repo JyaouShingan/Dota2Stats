@@ -41,7 +41,7 @@ import UIKit
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: "MatchHistoryView", bundle: bundle)
         
-        view = nib.instantiateWithOwner(self, options: nil)[0] as UIView
+        view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         view.frame = bounds
         view.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         
@@ -86,19 +86,14 @@ import UIKit
                 }
             }
             
-            let heroes = heroList["\(heroID)"] as NSDictionary
-            let heroLocalName = heroes["localName"] as String
-            let heroName = heroes["name"] as String
+            let heroes = heroList["\(heroID)"] as! NSDictionary
+            let heroLocalName = heroes["localName"] as! String
+            let heroName = heroes["name"] as! String
             
-            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.value), 0), { () -> Void in
-                let realName = heroName.stringByReplacingOccurrencesOfString("npc_dota_hero_", withString: "", options: nil, range: nil)
-                let heroImagePath = "http://cdn.dota2.com/apps/dota2/images/heroes/\(realName)_lg.png"
-                let imageURL = NSURL(string: heroImagePath)
-                let data = NSData(contentsOfURL: imageURL!)
-                dispatch_async(dispatch_get_main_queue()){
-                    cell!.heroImageView.image = UIImage(data: data!)
-                }
-            })
+            let realName = heroName.stringByReplacingOccurrencesOfString("npc_dota_hero_", withString: "", options: nil, range: nil)
+            let heroImagePath = "http://cdn.dota2.com/apps/dota2/images/heroes/\(realName)_lg.png"
+            let imageURL = NSURL(string: heroImagePath)
+            cell!.heroImageView.hnk_setImageFromURL(imageURL!, placeholder: nil, format: nil, failure: nil, success: nil)
             
             if match.player_kda == nil || match.player_won == nil {
                 apiSession.getPlayerResultAndKDA(match.match_id, playerID: matchesHistory!.account_id, inRadiant: match.user_team, completion: { (kda, result) -> Void in
@@ -130,11 +125,11 @@ import UIKit
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         currentSelectedMatchID = matchesHistory!.matchesShort[indexPath.row].match_id
-        (self.window?.rootViewController? as UINavigationController).topViewController.performSegueWithIdentifier("ShowMatchDetail", sender: self)
+        (self.window?.rootViewController as! UINavigationController).topViewController.performSegueWithIdentifier("ShowMatchDetail", sender: self)
     }
     
     @IBAction func showMoreMatches(sender: UIButton) {
-        (self.window?.rootViewController? as UINavigationController).topViewController.performSegueWithIdentifier("ShowMatchList", sender: self)
+        (self.window?.rootViewController as! UINavigationController).topViewController.performSegueWithIdentifier("ShowMatchList", sender: self)
     }
     /*
     // Only override drawRect: if you perform custom drawing.

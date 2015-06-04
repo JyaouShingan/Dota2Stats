@@ -117,7 +117,7 @@ class PlayerViewController: UIViewController, UIScrollViewDelegate, ApiSessionMa
             case "ShowMatchDetail" :
                 if let vc = segue.destinationViewController as? MatchDetailController {
                     vc.title = "Match Detail"
-                    apiSession.getSpecificMatchDetail((sender as MatchHistoryView).currentSelectedMatchID, completion: { (matchDetail) -> Void in
+                    apiSession.getSpecificMatchDetail((sender as! MatchHistoryView).currentSelectedMatchID, completion: { (matchDetail) -> Void in
                         vc.matchInfo = matchDetail
                         println(matchDetail)
                     })

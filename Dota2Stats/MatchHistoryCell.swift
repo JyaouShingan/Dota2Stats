@@ -58,5 +58,16 @@ class MatchHistoryCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        heroImageView.image = nil
+        heroNameLabel.text = nil
+        resultLabel.text = nil
+        matchLevelLabel.text = nil
+        kdaLabel.text = nil
+        timeLabel.text = nil
+    }
+    
 }
 

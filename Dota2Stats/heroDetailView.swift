@@ -64,7 +64,7 @@ import UIKit
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: "HeroDetailView", bundle: bundle)
         
-        view = nib.instantiateWithOwner(self, options: nil)[0] as UIView
+        view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         
         view.frame = bounds
         view.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
@@ -86,6 +86,10 @@ import UIKit
         return min(10, recentHeroes.count)
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 70
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let reuseIdentifier = "RecentHeroCell"
         var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as? RecentHeroCell
@@ -101,9 +105,9 @@ import UIKit
         if recentHeroes.count != 0 {
             
             let heroList = defaults.dictionaryForKey("HeroList")!
-            let heroes = heroList["\(recentHeroes[indexPath.row].heroID)"] as NSDictionary
-            let heroLocalName = heroes["localName"] as String
-            let heroName = heroes["name"] as String
+            let heroes = heroList["\(recentHeroes[indexPath.row].heroID)"] as! NSDictionary
+            let heroLocalName = heroes["localName"] as! String
+            let heroName = heroes["name"] as! String
             
             dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.value), 0), { () -> Void in
                 let realName = heroName.stringByReplacingOccurrencesOfString("npc_dota_hero_", withString: "", options: nil, range: nil)

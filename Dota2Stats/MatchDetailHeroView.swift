@@ -49,7 +49,7 @@ import UIKit
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: "MatchDetailHeroView", bundle: bundle)
         
-        view = nib.instantiateWithOwner(self, options: nil)[0] as UIView
+        view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         view.frame = bounds
         view.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         
@@ -63,5 +63,4 @@ import UIKit
         // Drawing code
     }
     */
-
 }
